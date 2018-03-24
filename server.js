@@ -6,6 +6,8 @@ const drone = require('./drone.js');
 
 const app = express();
 
+
+// App settings
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
@@ -22,10 +24,10 @@ app.post('/fly', function(req, res){
     res.render('index');
 });
 
-app.listen(3000, function () {
-    console.log('Listening on port 3000!')
-});
-
+// Livestream settings
 var videoServer = require("http").createServer(app);
 droneStream.listen(videoServer);
-videoServer.listen(3000);
+
+videoServer.listen(3000, function(){
+    console.log("Listening on port 3000");
+});
