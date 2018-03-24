@@ -1,0 +1,22 @@
+{
+  "name": "drone-challenge-2",
+  "version": "1.0.0",
+  "description": "**HELLO YES YES** \\ _Welcome to our nice drone challenge project, enjoy!_",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrankvanMourik/drone-challenge-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrankvanMourik/drone-challenge-2/issues"
+  },
+  "homepage": "https://github.com/FrankvanMourik/drone-challenge-2#readme",
+  "dependencies": {
+    "ar-drone": "^0.3.3"
+  }
+}
