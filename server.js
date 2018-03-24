@@ -1,19 +1,24 @@
-var express = require("express");
-var app = express();
-var router = express.Router();
-var path = __dirname + '/views/';
+const express = require('express');
+const drone = require('./drone.js');
 
-router.use(function (req,res,next) {
-    console.log("/" + req.method);
-    next();
+const app = express();
+
+app.set('view engine', 'ejs');
+
+app.use(express.static('public'));
+
+app.get('/', function (req, res) {
+    res.render('index');
+})
+app.post('/kill', function(req, res) {
+    drone.kill();
+    res.render('index');
+});
+app.post('/fly', function(req, res){
+    drone.fly();
+    res.render('index');
 });
 
-router.get("/",function(req,res){
-    res.sendFile(path + "index.html");
-});
-
-app.use("/", router);
-
-app.listen(3000,function(){
-    console.log("Live at Port 3000");
-});
+app.listen(3000, function () {
+    console.log('Listening on port 3000!')
+})
