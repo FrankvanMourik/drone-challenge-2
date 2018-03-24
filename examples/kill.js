@@ -31,7 +31,7 @@ server.listen(8080, function() {
     client.takeoff();
 
     client
-        .after(1000, function() {
+        .after(1, function() {
             this.stop();
             this.land();
         });
