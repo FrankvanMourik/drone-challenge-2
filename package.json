@@ -18,6 +18,9 @@
   "homepage": "https://github.com/FrankvanMourik/drone-challenge-2#readme",
   "dependencies": {
     "ar-drone": "^0.3.3",
-    "express": "^4.16.3"
+    "bootstrap": "^4.0.0",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.1"
   }
 }

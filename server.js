@@ -1,7 +1,19 @@
-var express=require('express');
-var app=express();
-app.get('/',function(req,res)
-{
-    res.send('Hello World!');
+var express = require("express");
+var app = express();
+var router = express.Router();
+var path = __dirname + '/views/';
+
+router.use(function (req,res,next) {
+    console.log("/" + req.method);
+    next();
 });
-var server=app.listen(8080,function() {});
+
+router.get("/",function(req,res){
+    res.sendFile(path + "index.html");
+});
+
+app.use("/", router);
+
+app.listen(3000,function(){
+    console.log("Live at Port 3000");
+});
