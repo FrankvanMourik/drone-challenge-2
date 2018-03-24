@@ -1,4 +1,7 @@
 const express = require('express');
+const http = require('http');
+const droneStream = require('dronestream');
+
 const drone = require('./drone.js');
 
 const app = express();
@@ -21,4 +24,8 @@ app.post('/fly', function(req, res){
 
 app.listen(3000, function () {
     console.log('Listening on port 3000!')
-})
+});
+
+var videoServer = require("http").createServer(app);
+droneStream.listen(videoServer);
+videoServer.listen(3000);
