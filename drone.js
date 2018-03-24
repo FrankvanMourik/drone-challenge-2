@@ -6,10 +6,12 @@ var client = arDrone.createClient();
 
 var drone = {
     kill: function(){
+        console.log('POST /kill');
         client.stop();
         client.land();
     },
     fly: function(){
+        console.log('POST /fly');
         client.takeoff();
         client
             .after(5000, function() {
