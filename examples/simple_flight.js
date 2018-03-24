@@ -32,10 +32,12 @@ server.listen(8080, function() {
 
   client
     .after(5000, function() {
-      this.clockwise(0.5);
+      this.stop();
+      this.land();
     })
     .after(5000, function() {
       this.stop();
+      this.land();
     })
     .after(5000, function() {
       this.clockwise(0.5);
