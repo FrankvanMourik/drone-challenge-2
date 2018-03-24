@@ -54,6 +54,35 @@ var drone = {
                 this.stop();
                 this.land();
             });
+    },
+    hover: function(){
+        client.stop();
+    },
+    takeoff: function() {
+        client.takeoff();
+    },
+    land: function(){
+        client.stop();
+        client.land();
+    },
+    forward: function(){
+        client.front(0.2);
+    },
+    backward: function(){
+        client.back(0.2);
+    },
+    left: function(){
+        client.left(0.2);
+    },
+    right: function(){
+        client.right(0.2);
+    },
+    rotateLeft: function(){
+        client.counterClockwise(0.2);
+    },
+    rotateRight: function(){
+        client.clockwise(0.2);
+
     }
 };
 
