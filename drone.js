@@ -28,7 +28,7 @@ wss.on('connection', function connection(ws, req) {
     client.on('navdata', function(data) {
         if(i == 10){
             i = 1;
-            ws.send(JSON.stringify({altitude: 12, batteryPercentage: 55}));
+            ws.send(JSON.stringify({altitude: data.demo.altitude, batteryPercentage: data.demo.batteryPercentage}));
         }
         else {
             i++
