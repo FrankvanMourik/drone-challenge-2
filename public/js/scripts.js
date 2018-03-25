@@ -32,8 +32,10 @@ $(document).ready(function(e) {
     }
     // event emmited when receiving message 
     ws.onmessage = function (ev) {
-        //console.log(ev);
-        $('#altitude').html(JSON.parse(ev.data).altitude);
+        console.log(ev);
+        var json = JSON.parse(ev.data);
+        $('#altitude').html(json.altitude);
+        $('#batteryPercentage').html(json.batteryPercentage);
     }
 });
 

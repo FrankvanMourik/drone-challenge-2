@@ -1,0 +1,59 @@
+body {
+  background-color: darkslategray;
+  padding: 0;
+  margin: 0;
+}
+.display-4 {
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: 
+    "video info"
+    "commands info"
+  ;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 3fr 1fr;
+  height: 100vh;
+}
+
+.video {
+  grid-area: video;
+}
+
+.commands {
+  grid-area: commands;
+}
+
+.info {
+  grid-area: info;
+  padding: 3em;
+  border-left: 3px solid white;
+  vertical-align: middle;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: [top] 100px [bottom] auto;
+}
+
+.top {
+  grid-row: top;
+  background: white;
+  color: darkslategray;
+}
+
+.bottom {
+  grid-row: bottom;
+}
+
+.alt {
+  margin: 1em;
+  padding: 1em;
+  background-color: white;
+}
+
+.bat {
+  margin: 1em;
+  padding: 1em;
+  background-color: white;
+}
