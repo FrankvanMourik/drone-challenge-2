@@ -5,28 +5,30 @@
     <title>Drone</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/nodecopter.js"></script>
     <script type="text/javascript" src="/js/scripts.js"></script>
 </head>
 <body>
-<br />
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="jumbotron" style="padding-top:32px; padding-bottom: 32px;">
-                <h1 class="display-4">Drone</h1>
-                <div id="droneStream"></div>
-
-                <p>
-                    <button value="kill" class="btn btn-danger" style="margin-right: 20px;">Kill</button>
-                    <button value="fly" class="btn btn-primary" style="margin-right: 20px;">Fly</button>
-                    <button value="manual" class="btn btn-warning" style="margin-right: 20px;">Start Manual</button>
-                    <p id="altitude"></p>
-                </p>
-            </div>
-        </div>
+    <div class="video">
+        <h1 class="display-4">Drone</h1>
+        <div id="droneStream"></div>
+    </div>
+    <div class="commands">
+        <p>
+            <button value="kill" class="btn btn-danger" style="margin-right: 20px;">Kill</button>
+            <button value="fly" class="btn btn-primary" style="margin-right: 20px;">Fly</button>
+            <button value="manual" class="btn btn-warning" style="margin-right: 20px;">Start Manual</button>
+        </p>
+    </div>
+    <div class="info">
+        <div class="bottom">
+        <div class="alt"><h3>Altitude:</h3> <h4 id="altitude">0</h4></div>
+        <div class="bat"><h3>Battery:</h3> <h4 id="batteryPercentage">0</h4></div>
+    </div>
     </div>
 </div>
 
