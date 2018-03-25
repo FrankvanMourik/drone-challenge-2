@@ -26,7 +26,7 @@ $(document).ready(function(e) {
 });
 
 // Sent keypresses to the server for manual control
-var allowedKeys = ['t', 'l', 'w', 'a', 's', 'd', 'q', 'e'];
+var allowedKeys = ['t', 'g', 'w', 'a', 's', 'd', 'q', 'e', 'r', 'f'];
 var currentKeys = [];
 allowedKeys.forEach(function(e){
    currentKeys[e] = false;

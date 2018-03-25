@@ -38,11 +38,11 @@ app.post('/keyUp/t', function(req, res){
     drone.hover();
     res.sendStatus(200);
 });
-app.post('/keyDown/l', function(req, res){
+app.post('/keyDown/g', function(req, res){
     drone.land();
     res.sendStatus(200)
 });
-app.post('/keyUp/l', function(req, res){
+app.post('/keyUp/g', function(req, res){
     res.sendStatus(200);
 });
 app.post('/keyDown/w', function(req, res){
@@ -91,6 +91,22 @@ app.post('/keyDown/e', function(req, res){
 });
 app.post('/keyUp/e', function(req, res){
     drone.rotateRightStop();
+    res.sendStatus(200);
+});
+app.post('/keyDown/r', function(req, res){
+    drone.up();
+    res.sendStatus(200);
+});
+app.post('/keyUp/r', function(req, res){
+    drone.upStop();
+    res.sendStatus(200);
+});
+app.post('/keyDown/f', function(req, res){
+    drone.down();
+    res.sendStatus(200);
+});
+app.post('/keyUp/f', function(req, res){
+    drone.downStop();
     res.sendStatus(200);
 });
 

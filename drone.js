@@ -101,6 +101,18 @@ var drone = {
     rotateRightStop: function(){
         client.clockwise(0);
     },
+    up: function(){
+        client.up(0.2);
+    },
+    upStop: function(){
+        client.up(0);
+    },
+    down: function(){
+        client.down(0.2);
+    },
+    downStop: function(){
+        client.down(0);
+    }
 };
 
 module.exports = drone;
