@@ -24,18 +24,19 @@ wss.on('connection', function connection(ws, req) {
     console.log('received: %s', message);
   });
 
-//     client.on('navdata', function(data) {
-//         // console.log(data);
-//         ws.send(data.demo.altitude);
-//     })
+    client.on('navdata', function(data) {
+        //ws.send(data.demo.altitude);
+        ws.send(JSON.stringify({altitude: 12, batteryPercentage: 55}));
+    });
+})
 
-  setInterval(
+  /*setInterval(
     () => ws.send(JSON.stringify({altitude: 12, batteryPercentage: 55})),
     1000
-  )
+  )*/
 
 server.listen(3001, function listening() {
-    console.log('Listening on %d', server.address().port);
+    console.log('Data server listening on %d', server.address().port);
   })  
 
 var drone = {

@@ -122,7 +122,7 @@ droneStream.listen(videoServer);
 
 
 videoServer.listen(8080, function listening() {
-  console.log('Listening on %d', videoServer.address().port);
+  console.log('Web server listening on %d', videoServer.address().port);
 });
 
 
