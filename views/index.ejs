@@ -5,6 +5,7 @@
     <title>Drone</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/nodecopter.js"></script>
@@ -19,12 +20,30 @@
                 <h1 class="display-4">Drone</h1>
                 <div id="droneStream"></div>
 
-                <p>
+                <p class="droneControl">
                     <button value="kill" class="btn btn-danger" style="margin-right: 20px;">Kill</button>
                     <button value="fly" class="btn btn-primary" style="margin-right: 20px;">Fly</button>
                     <button value="manual" class="btn btn-warning" style="margin-right: 20px;">Start Manual</button>
                 </p>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col keys">
+            <ul id="keyboard">
+                <li class="letter" id="q">q</li>
+                <li class="letter" id="w">w</li>
+                <li class="letter" id="e">e</li>
+                <li class="empty"></li>
+                <li class="letter" id="t">t</li>
+                <li class="spacing firstitem"></li>
+                <li class="letter" id="a">a</li>
+                <li class="letter" id="s">s</li>
+                <li class="letter" id="d">d</li>
+                <li class="empty"></li>
+                <li class="empty"></li>
+                <li class="letter" id="l">l</li>
+            </ul>
         </div>
     </div>
 </div>
