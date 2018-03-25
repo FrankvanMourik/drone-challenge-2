@@ -1,56 +1,33 @@
 var arDrone = require('ar-drone');
-var http    = require('http');
+var http = require('http');
 
 //var pngStream = arDrone.createClient().getPngStream();
 var client = arDrone.createClient();
 
 var drone = {
-    kill: function(){
+    kill: function () {
         console.log('POST /kill');
         client.stop();
         client.land();
     },
-    fly: function(){
+    fly: function () {
         console.log('POST /fly');
         client.takeoff();
         client
-            .after(5000, function() {
-                this.clockwise(0.5);
+            .after(1000, function () {
+                this.front(0.5);
             })
-            .after(5000, function() {
+            .after(3000, function () {
                 this.stop();
+                this.land();
             })
-            .after(5000, function() {
-                this.clockwise(0.5);
+            .after(3000, function () {
+                this.takeoff();
             })
-            .after(5000, function() {
-                this.stop();
+            .after(1000, function () {
+                this.back(0.5);
             })
-            .after(5000, function() {
-                this.clockwise(0.5);
-            })
-            .after(5000, function() {
-                this.stop();
-            })
-            .after(5000, function() {
-                this.clockwise(-0.5);
-            })
-            .after(5000, function() {
-                this.stop();
-            })
-            .after(5000, function() {
-                this.clockwise(-0.5);
-            })
-            .after(5000, function() {
-                this.stop();
-            })
-            .after(5000, function() {
-                this.clockwise(-0.5);
-            })
-            .after(5000, function() {
-                this.stop();
-            })
-            .after(1000, function() {
+            .after(3000, function () {
                 this.stop();
                 this.land();
             });
