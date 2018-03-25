@@ -3,11 +3,6 @@ p.droneControl button{
     margin-top:15px;
 }
 
-.jumbotron{
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
 div.col.keys{
     display: none;
     padding-bottom: 50px;
@@ -27,18 +22,21 @@ div.col.keys{
     text-align: center;
     background: #fff;
     border: 1px solid #ccc;
+    font-weight: bold;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
 #keyboard li.active{
-    background-color: #ddd;
+    background-color: #aaa;
 }
 #keyboard li.empty{
     border: 0;
+    background-color: transparent;
 }
 #keyboard li.spacing{
     width: 20px;
     border:0;
+    background-color: transparent;
 }
 .lastitem {
     margin-right: 0;
