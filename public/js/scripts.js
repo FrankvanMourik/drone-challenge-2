@@ -32,7 +32,6 @@ allowedKeys.forEach(function(e){
 
 $(document).keypress(function(e){
     if(manualControl && allowedKeys.indexOf(e.key) != -1 && !currentKeys[e.key]){
-        console.log("pressed '" + e.key + "'");
         currentKeys[e.key] = true;
         $.post("/keyDown/" + e.key);
     }
@@ -40,8 +39,7 @@ $(document).keypress(function(e){
 
 $(document).keyup(function(e){
    if(manualControl && allowedKeys.indexOf(e.key) != -1){
-       console.log("up '" + e.key + "'");
        currentKeys[e.key] = false;
-       $.post("/keyUp");
+       $.post("/keyUp/" + e.key);
    }
 });

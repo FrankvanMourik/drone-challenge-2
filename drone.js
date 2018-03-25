@@ -68,22 +68,39 @@ var drone = {
     forward: function(){
         client.front(0.2);
     },
+    forwardStop: function(){
+      client.front(0);
+    },
     backward: function(){
         client.back(0.2);
+    },
+    backwardStop: function(){
+        client.back(0);
     },
     left: function(){
         client.left(0.2);
     },
+    leftStop: function(){
+        client.left(0);
+    },
     right: function(){
         client.right(0.2);
+    },
+    rightStop: function(){
+        client.right(0);
     },
     rotateLeft: function(){
         client.counterClockwise(0.2);
     },
+    rotateLeftStop: function(){
+        client.counterClockwise(0);
+    },
     rotateRight: function(){
         client.clockwise(0.2);
-
-    }
+    },
+    rotateRightStop: function(){
+        client.clockwise(0);
+    },
 };
 
 module.exports = drone;

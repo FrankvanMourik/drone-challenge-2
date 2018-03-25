@@ -34,34 +34,64 @@ app.post('/keyDown/t', function(req, res){
     drone.takeoff();
     res.sendStatus(200);
 });
+app.post('/keyUp/t', function(req, res){
+    drone.hover();
+    res.sendStatus(200);
+});
 app.post('/keyDown/l', function(req, res){
     drone.land();
     res.sendStatus(200)
+});
+app.post('/keyUp/l', function(req, res){
+    res.sendStatus(200);
 });
 app.post('/keyDown/w', function(req, res){
     drone.forward();
     res.sendStatus(200);
 });
+app.post('/keyUp/w', function(req, res){
+    drone.forwardStop();
+    res.sendStatus(200);
+});
 app.post('/keyDown/s', function(req, res){
-    //console.log("s");
     drone.backward();
+    res.sendStatus(200);
+});
+app.post('/keyUp/s', function(req, res){
+    drone.backwardStop();
     res.sendStatus(200);
 });
 app.post('/keyDown/a', function(req, res){
     drone.left();
     res.sendStatus(200);
 });
+app.post('/keyUp/a', function(req, res){
+    drone.leftStop();
+    res.sendStatus(200);
+});
 app.post('/keyDown/d', function(req, res){
     drone.right();
+    res.sendStatus(200);
+});
+app.post('/keyUp/d', function(req, res){
+    drone.rightStop();
     res.sendStatus(200);
 });
 app.post('/keyDown/q', function(req, res){
     drone.rotateLeft();
     res.sendStatus(200);
 });
+app.post('/keyUp/q', function(req, res){
+    drone.rotateLeftStop();
+    res.sendStatus(200);
+});
 app.post('/keyDown/e', function(req, res){
    drone.rotateRight();
    res.sendStatus(200);
+});
+app.post('/keyUp/e', function(req, res){
+    drone.rotateRightStop();
+    res.sendStatus(200);
 });
 
 
