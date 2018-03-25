@@ -9,19 +9,8 @@ const url = require('url');
 var client = arDrone.createClient();
 
 
-var drone = {
-    kill: function(){
-        console.log('POST /kill');
-        client.stop();
-        client.land();
-    },
-    fly: function(){
-        console.log('POST /fly');
-        var altitude; 
-        const app2 = express();
- 
-
-// App settings
+const app2 = express();
+  // App settings
 app2.set('view engine', 'ejs');
 const server = http.createServer(app2);
 
@@ -34,19 +23,30 @@ wss.on('connection', function connection(ws, req) {
   ws.on('message', function incoming(message) {
     console.log('received: %s', message);
   });
- 
+
+//     client.on('navdata', function(data) {
+//         // console.log(data);
+//         ws.send(data.demo.altitude);
+//     })
+
   setInterval(
-    () =>client.on('navdata', function(data) {
-        // console.log(data);
-        ws.send(data.demo.altitude);
-    }),
-    1000,
+    () => ws.send(JSON.stringify({altitude: 12, batteryPercentage: 55})),
+    1000
   )
 }); 
- 
+
 server.listen(3001, function listening() {
-  console.log('Listening on %d', server.address().port);
-})     
+    console.log('Listening on %d', server.address().port);
+  })  
+
+var drone = {
+    kill: function(){
+        console.log('POST /kill');
+        client.stop();
+        client.land();
+    },
+    fly: function(){
+        console.log('POST /fly');   
         client.takeoff();
         client
             .after(5000, function() {

@@ -31,7 +31,7 @@ $(document).ready(function(e) {
     // event emmited when receiving message 
     ws.onmessage = function (ev) {
         console.log(ev);
-        $('#altitude').html(ev.data);
+        $('#altitude').html(JSON.parse(ev.data).altitude);
     }
 });
 
