@@ -40,8 +40,8 @@ wss.on('connection', function connection(ws, req) {
         // console.log(data);
         ws.send(data.demo.altitude);
     }),
-    1000,
-  )
+    1000
+  );
 }); 
  
 server.listen(3001, function listening() {
