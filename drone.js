@@ -24,9 +24,16 @@ wss.on('connection', function connection(ws, req) {
     console.log('received: %s', message);
   });
 
+    var i = 10;
     client.on('navdata', function(data) {
+        if(i == 10){
+            i = 1;
+            ws.send(JSON.stringify({altitude: 12, batteryPercentage: 55}));
+        }
+        else {
+            i++
+        }
         //ws.send(data.demo.altitude);
-        ws.send(JSON.stringify({altitude: 12, batteryPercentage: 55}));
     });
 })
 

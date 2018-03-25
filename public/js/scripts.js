@@ -1,5 +1,8 @@
 var manualControl = false;
 
+var date = new Date();
+var prevM = 0;
+
 $(document).ready(function(e) {
     $("button").click(function(e){
         var value = $(this).attr('value');
