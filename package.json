@@ -20,6 +20,9 @@
     "ar-drone": "^0.3.3",
     "dronestream": "^1.1.1",
     "ejs": "^2.5.7",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "socket.io": "^2.0.4",
+    "websocket": "^1.0.25",
+    "ws": "^5.1.0"
   }
 }

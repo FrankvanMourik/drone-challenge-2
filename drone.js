@@ -1,8 +1,13 @@
 var arDrone = require('ar-drone');
 var http    = require('http');
+const WebSocket = require('ws');
+const express = require('express');
+const url = require('url');
+
 
 //var pngStream = arDrone.createClient().getPngStream();
 var client = arDrone.createClient();
+
 
 var drone = {
     kill: function(){
@@ -12,6 +17,36 @@ var drone = {
     },
     fly: function(){
         console.log('POST /fly');
+        var altitude; 
+        const app2 = express();
+ 
+
+// App settings
+app2.set('view engine', 'ejs');
+const server = http.createServer(app2);
+
+const wss = new WebSocket.Server({ server });
+wss.on('connection', function connection(ws, req) {
+  const location = url.parse(req.url, true);
+  // You might use location.query.access_token to authenticate or share sessions
+  // or req.headers.cookie (see http://stackoverflow.com/a/16395220/151312)
+ 
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+  });
+ 
+  setInterval(
+    () =>client.on('navdata', function(data) {
+        // console.log(data);
+        ws.send(data.demo.altitude);
+    }),
+    1000,
+  )
+}); 
+ 
+server.listen(3001, function listening() {
+  console.log('Listening on %d', server.address().port);
+})     
         client.takeoff();
         client
             .after(5000, function() {
